@@ -1,10 +1,14 @@
-
+import 'package:mini_project_ui/diet.dart';
+import 'package:mini_project_ui/fitnessPage.dart';
 //import 'dart:html';
 import 'dart:ui';
 // import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:mini_project_ui/moneyPage.dart';
+import 'package:mini_project_ui/routine.dart';
+import 'fitnessPage.dart';
 
 void main() {
   runApp( MaterialApp(home: MyApp()));
@@ -101,8 +105,14 @@ class _MyAppState extends State<MyApp> {
                   ),),
                 child: InkWell(
                   onTap: () {
-                    setState(() {
-                    });
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                       builder:(context) => FitnessPage(
+
+                       ),
+                      ),
+                    );
                   }, // Handle your callback.
                   splashColor: Colors.black.withOpacity(0.3),
                   child: Ink(
@@ -151,8 +161,13 @@ class _MyAppState extends State<MyApp> {
                   ),),
                 child: InkWell(
                   onTap: () {
-                    setState(() {
-                    });
+                   Navigator.push(
+                     context,
+                     MaterialPageRoute(builder: (context) => MoneyPage(
+
+                     ),
+                    ),
+                   );
                   }, // Handle your callback.
                   splashColor: Colors.black.withOpacity(0.3),
                   child: Ink(
@@ -195,8 +210,14 @@ class _MyAppState extends State<MyApp> {
                   ),),
                 child: InkWell(
                   onTap: () {
-                    setState(() {
-                    });
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => RoutinePage(
+
+                        ),
+                      ),
+                    );
                   }, // Handle your callback.
                   splashColor: Colors.black.withOpacity(0.3),
                   child: Ink(
@@ -237,8 +258,14 @@ class _MyAppState extends State<MyApp> {
                   ),),
                 child: InkWell(
                   onTap: () {
-                    setState(() {
-                    });
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder:(context) => DietPage(
+
+                          ),
+                      ),
+                    );
                   }, // Handle your callback.
                   splashColor: Colors.black.withOpacity(0.3),
                   child: Ink(
