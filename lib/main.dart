@@ -8,6 +8,7 @@ import 'package:mini_project_ui/moneyPage.dart';
 import 'package:mini_project_ui/routine.dart';
 import 'fitnessPage.dart';
 
+
 void main() {
   runApp(MaterialApp
     (home: MyApp()),
@@ -33,6 +34,7 @@ class _MyAppState extends State<MyApp> {
                     fontStyle: FontStyle.italic,
                     fontFamily: 'RobotoSlab',
                     fontSize: 30,
+                    color: Colors.black,
                   )),
             ),
             flexibleSpace: Container(
@@ -76,7 +78,7 @@ class _MyAppState extends State<MyApp> {
                       borderRadius: BorderRadius.all(Radius.circular(10.0))),
                 ),
                 Container(
-                  height: 220,
+                  height: 230,
                   width: 100,
                   margin: EdgeInsets.symmetric(vertical: 0, horizontal: 25),
                   decoration: BoxDecoration(
@@ -106,7 +108,7 @@ class _MyAppState extends State<MyApp> {
                   height: 12,
                 ),
                 Container(
-                  height: 224,
+                  height: 230,
                   width: 100,
                   margin: EdgeInsets.symmetric(vertical: 0, horizontal: 25),
                   decoration: BoxDecoration(
@@ -136,7 +138,7 @@ class _MyAppState extends State<MyApp> {
                   height: 12,
                 ),
                 Container(
-                  height: 220,
+                  height: 230,
                   width: 100,
                   margin: EdgeInsets.symmetric(vertical: 0, horizontal: 25),
                   decoration: BoxDecoration(
@@ -166,7 +168,7 @@ class _MyAppState extends State<MyApp> {
                   height: 12,
                 ),
                 Container(
-                  height: 220,
+                  height: 230,
                   width: 100,
                   margin: EdgeInsets.symmetric(vertical: 0, horizontal: 25),
                   decoration: BoxDecoration(
