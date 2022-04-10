@@ -13,11 +13,24 @@ class _RoutinePageState extends State<RoutinePage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Colors.purple,
+        appBar: AppBar(
+          title: Center(
+            child: Text('Routine'),
+          ),
+        ),
         body: Container(
+          decoration: BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.topRight,
+                end: Alignment.bottomLeft,
+                colors: [
+                  Colors.greenAccent,
+                  Colors.indigo,
+                ],
+              )),
           child: Center(
             child: Text(
-              'hello this Routine Page',
+              'Hello this is Routine Page',
               style: TextStyle(
                 fontSize: 22,
                 fontStyle: FontStyle.italic,

@@ -8,11 +8,25 @@ class DietPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Colors.red,
+        appBar: AppBar(
+          backgroundColor: Colors.indigo,
+          title: Center(
+            child: Text('Diet'),
+          ),
+        ),
         body: Container(
+          decoration: BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.topRight,
+                end: Alignment.bottomLeft,
+                colors: [
+                  Colors.greenAccent,
+                  Colors.indigo,
+                ],
+              )),
           child: Center(
             child: Text(
-              'hello this Diet Page',
+              'Hello this is Diet Page',
               style: TextStyle(
                 fontSize: 22,
                 fontStyle: FontStyle.italic,

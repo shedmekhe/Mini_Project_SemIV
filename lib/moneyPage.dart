@@ -13,11 +13,25 @@ class _MoneyPageState extends State<MoneyPage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Colors.green,
+        appBar: AppBar(
+          backgroundColor: Colors.greenAccent,
+          title: Center(
+            child: Text('Money'),
+          ),
+        ),
         body: Container(
+          decoration: BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.topRight,
+                end: Alignment.bottomLeft,
+                colors: [
+                  Colors.greenAccent,
+                  Colors.indigo,
+                ],
+              )),
           child: Center(
             child: Text(
-              'hello this Money Page',
+              'Hello this is Money Page',
               style: TextStyle(
                 fontSize: 22,
                 fontStyle: FontStyle.italic,

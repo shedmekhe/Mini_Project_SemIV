@@ -15,10 +15,24 @@ class _FitnessPageState extends State<FitnessPage> {
     return SafeArea(
         child: Scaffold(
           backgroundColor: Colors.blue,
+          appBar: AppBar(
+            title: Center(
+              child: Text('Fitness'),
+            ),
+        ),
           body: Container(
+            decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment.topRight,
+                  end: Alignment.bottomLeft,
+                  colors: [
+                    Colors.greenAccent,
+                    Colors.indigo,
+                  ],
+                )),
             child: Center(
               child: Text(
-                'hello this fitness Page',
+                'Hello this is fitness Page',
                 style: TextStyle(
                   fontSize: 22,
                   fontStyle: FontStyle.italic,
