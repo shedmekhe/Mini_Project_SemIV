@@ -166,6 +166,12 @@ class _DietPageState extends State<DietPage> with TickerProviderStateMixin {
           unselectedItemColor: Colors.black,
           items: const <BottomNavigationBarItem>[
             BottomNavigationBarItem(
+              activeIcon: Icon(
+
+                  Icons.fastfood_rounded,
+                  color: Colors.white70,
+
+              ),
                 icon: Icon(
                   Icons.fastfood_rounded,
                   color: Colors.black,
