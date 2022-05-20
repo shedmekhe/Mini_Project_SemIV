@@ -39,7 +39,7 @@ class _FitnessPageState extends State<FitnessPage> {
                       childAspectRatio: 0.85,
                       children: <Widget>[
 
-
+                       // Yoga
 
                         Container(
                           margin: EdgeInsets.only(left:10, right: 10, bottom: 20),
@@ -59,7 +59,7 @@ class _FitnessPageState extends State<FitnessPage> {
                                 Expanded(child: Container(
                                   decoration: BoxDecoration(
                                     image: DecorationImage(
-                                      image: AssetImage('FitnessAssets/Yoga.jpg'),
+                                      image: AssetImage('FitnessAssets/Meditate.jpg'),
                                       fit: BoxFit.contain
                                     ),
                                   ),
@@ -81,6 +81,7 @@ class _FitnessPageState extends State<FitnessPage> {
                         ),
 
 
+                        //Cardio
                         Container(
                           margin: EdgeInsets.only(left:10, right: 10, bottom: 20),
                           width: MediaQuery.of(context).size.width*0.3,
@@ -99,7 +100,7 @@ class _FitnessPageState extends State<FitnessPage> {
                                 Expanded(child: Container(
                                   decoration: BoxDecoration(
                                     image: DecorationImage(
-                                        image: AssetImage('asset/'),
+                                        image: AssetImage('FitnessAssets/Cardio.jpg'),
                                         fit: BoxFit.contain
                                     ),
                                   ),
@@ -107,7 +108,48 @@ class _FitnessPageState extends State<FitnessPage> {
                                 SizedBox(height: 20,),
                                 Container(
                                   padding: EdgeInsets.all(20),
-                                  child: Text('Yoga',style: TextStyle(
+                                  child: Text('Cardio',style: TextStyle(
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.w500,
+
+                                  ),textAlign: TextAlign.center ),
+                                ),
+
+                                SizedBox(height: 10,),
+                              ],
+                            ),
+                          ),
+                        ),
+
+
+                        //Weight Training
+                        Container(
+                          margin: EdgeInsets.only(left:10, right: 10, bottom: 20),
+                          width: MediaQuery.of(context).size.width*0.3,
+                          decoration: BoxDecoration(
+                              color:Colors.white,
+                              borderRadius: BorderRadius.all(Radius.circular(30)),
+                              boxShadow: [BoxShadow(
+                                color: Colors.black.withOpacity(0.2),
+                              )]
+                          ),
+                          child: InkWell(
+                            onTap: (){},
+                            child: Column(
+                              children: <Widget>[
+                                SizedBox(height: 20,),
+                                Expanded(child: Container(
+                                  decoration: BoxDecoration(
+                                    image: DecorationImage(
+                                        image: AssetImage('FitnessAssets/Weight Training.jpg'),
+                                        fit: BoxFit.contain
+                                    ),
+                                  ),
+                                )),
+                                SizedBox(height: 20,),
+                                Container(
+                                  padding: EdgeInsets.all(20),
+                                  child: Text('Weight Training',style: TextStyle(
                                     fontSize: 18,
                                     fontWeight: FontWeight.w500,
 
@@ -137,7 +179,7 @@ class _FitnessPageState extends State<FitnessPage> {
                                 Expanded(child: Container(
                                   decoration: BoxDecoration(
                                     image: DecorationImage(
-                                        image: AssetImage('asset/'),
+                                        image: AssetImage('FitnessAssets/Sports.jpg'),
                                         fit: BoxFit.contain
                                     ),
                                   ),
@@ -145,45 +187,7 @@ class _FitnessPageState extends State<FitnessPage> {
                                 SizedBox(height: 20,),
                                 Container(
                                   padding: EdgeInsets.all(20),
-                                  child: Text('Yoga',style: TextStyle(
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.w500,
-
-                                  ),textAlign: TextAlign.center ),
-                                ),
-
-                                SizedBox(height: 10,),
-                              ],
-                            ),
-                          ),
-                        ),
-                        Container(
-                          margin: EdgeInsets.only(left:10, right: 10, bottom: 20),
-                          width: MediaQuery.of(context).size.width*0.3,
-                          decoration: BoxDecoration(
-                              color:Colors.white,
-                              borderRadius: BorderRadius.all(Radius.circular(30)),
-                              boxShadow: [BoxShadow(
-                                color: Colors.black.withOpacity(0.2),
-                              )]
-                          ),
-                          child: InkWell(
-                            onTap: (){},
-                            child: Column(
-                              children: <Widget>[
-                                SizedBox(height: 20,),
-                                Expanded(child: Container(
-                                  decoration: BoxDecoration(
-                                    image: DecorationImage(
-                                        image: AssetImage('asset/'),
-                                        fit: BoxFit.contain
-                                    ),
-                                  ),
-                                )),
-                                SizedBox(height: 20,),
-                                Container(
-                                  padding: EdgeInsets.all(20),
-                                  child: Text('Yoga',style: TextStyle(
+                                  child: Text('Sports',style: TextStyle(
                                     fontSize: 18,
                                     fontWeight: FontWeight.w500,
 
