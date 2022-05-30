@@ -67,14 +67,14 @@ class MyInputField extends StatelessWidget {
                     decoration: InputDecoration(
                       hintText: hint,
                       hintStyle: subTitleStyle,
-                      enabledBorder: UnderlineInputBorder(
-                        borderSide: BorderSide(color:Colors.black,width: 2)
-                      ),
-                      focusedBorder: UnderlineInputBorder(
-                        borderSide: BorderSide(
-                          width: 1,
-                        )
-                      ),
+                      // enabledBorder: UnderlineInputBorder(
+                      //   borderSide: BorderSide(color:Colors.black,width: 2)
+                      // ),
+                      // focusedBorder: UnderlineInputBorder(
+                      //   borderSide: BorderSide(
+                      //     width: 1,
+                      //   )
+                      // ),
                       // enabledBorder: UnderlineInputBorder(
                       //   borderSide: BorderSide(
                       //     width: 2,

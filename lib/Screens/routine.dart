@@ -30,6 +30,7 @@ TextStyle get headingStyle{
       )
   );
 }
+
 class RoutinePage extends StatefulWidget {
 
 
@@ -55,174 +56,182 @@ final listKey = GlobalKey<AnimatedListState>();
 
   @override
   Widget build(BuildContext context) {
+
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-
       appBar: AppBar(
+        backgroundColor: Color(0xFF21BFBD),
+          elevation: 0,
           actions: [
             Icon(
-              Icons.person,
+              Icons.menu,
               size : 40,
             )
           ],
 
+
           title: Center(child: Text("Daily Routine",))
       ),
-      body: Column(
-        children: [
-          // _addTaskBar(),
-          Container(
-            height: size.height*0.2+50,
-            child: Stack(
-              children: <Widget>[
-                Container(
-                  height: size.height*0.2,
-                  decoration: BoxDecoration(
-                    color: Colors.blue,
-                    borderRadius: BorderRadius.only(bottomLeft: Radius.circular(36),bottomRight: Radius.circular(36))
-                  ),
-                  child: Container(
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            // _addTaskBar(),
+            Container(
+              height: size.height/3,
+              child: Stack(
+                children: <Widget>[
+                  Container(
 
-                    margin: const EdgeInsets.only(left: 20,right: 20,top: 20,bottom: 50),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Container(
-
-                          margin: EdgeInsets.symmetric(vertical: 10.0),
-                          child: Column(
-
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(DateFormat.yMMMMd().format(DateTime.now()),
-                                style: subHeadingStyle,
-                              ),
-                              Text("Today",
-                                style: headingStyle,),
-                            ],
-                          ),
-                        ),
-                        SizedBox(
-                          width: 150,
-                          height: 50,
-
-                          child: ElevatedButton(
-                            child: const Text('+Add Task',),
-                            style: ButtonStyle(
-
-                                backgroundColor: MaterialStateProperty.all(Colors.indigo),
-                                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                                    RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(25.0),
-                                        side: BorderSide(color: Colors.red)
-                                    )
-                                )
-                            ),
-                            onPressed: () {
-
-                              Navigator.push(context,
-                                MaterialPageRoute(builder: (context) => const AddTaskPage()),);
-                            },
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-                Positioned(
-                  bottom: 0,
-                  left: 0,
-                  right: 0,
-                  child: Container(
-
-                    margin: EdgeInsets.symmetric(horizontal: 15),
-                    height: 110,
+                    height: size.height*0.2,
+                    // height : size.height-size.height/3-150,
                     decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(10),
-                        border: Border.all(
-                          color: Colors.blueGrey,
-                          width: 3,
-                        ),
-                      boxShadow:[
-                        BoxShadow(
-
-                          offset: Offset(0,10),
-                          blurRadius: 50,
-                          color: Colors.white.withOpacity(0.23),
-                        ),
-                      ]
+                      color: Color(0xFF21BFBD),
+                      borderRadius: BorderRadius.only(bottomLeft: Radius.circular(36),bottomRight: Radius.circular(36))
                     ),
                     child: Container(
 
-                      // margin: const EdgeInsets.only(top:20,left: 20),
-                      child: DatePicker(
-                        DateTime.now(),
-                        height: 95,
-                        width: 80,
-                        initialSelectedDate: DateTime.now(),
-                        selectionColor: Colors.indigo,
-                        selectedTextColor: Colors.white,
-                        dateTextStyle: GoogleFonts.lato(
-                          textStyle: TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.w600,
-                            color: Colors.grey,
+                      margin: const EdgeInsets.only(left: 20,right: 20,top: 20,bottom: 50),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Container(
+                            margin: EdgeInsets.symmetric(vertical: 5.0),
+                            child: Column(
+
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(DateFormat.yMMMMd().format(DateTime.now()),
+                                  style: subHeadingStyle,
+                                ),
+                                Text("Today",
+                                  style: headingStyle,),
+                              ],
+                            ),
                           ),
-                        ),
-                        dayTextStyle: GoogleFonts.lato(
-                          textStyle: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.w600,
-                            color: Colors.grey,
+                          SizedBox(
+                            width: 150,
+                            height: 50,
+
+                            child: ElevatedButton(
+                              child: const Text('+Add Task',
+                              style: TextStyle(
+                                color: Colors.black,
+                              ),),
+                              style: ButtonStyle(
+
+                                  backgroundColor: MaterialStateProperty.all(Color(0xFF7A9BEE)),
+                                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                                      RoundedRectangleBorder(
+                                          borderRadius: BorderRadius.circular(30.0),
+                                      )
+                                  )
+                              ),
+                              onPressed: () {
+
+                                Navigator.push(context,
+                                  MaterialPageRoute(builder: (context) => const AddTaskPage()),);
+                              },
+                            ),
                           ),
-                        ),
-                        monthTextStyle: GoogleFonts.lato(
-                          textStyle: TextStyle(
-                            fontSize: 14,
-                            fontWeight: FontWeight.w600,
-                            color: Colors.grey,
-                          ),
-                        ),
-                        onDateChange: (date){
-                          _selectedDate = date;
-                        },
+                        ],
                       ),
                     ),
-
                   ),
-                ),
-              ],
+                  Positioned(
+                    bottom: 0,
+                    left: 0,
+                    right: 0,
+                    child: Container(
+
+                      margin: EdgeInsets.symmetric(horizontal: 15),
+                      height: 110,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(10),
+                          border: Border.all(
+                            color: Colors.blueGrey,
+                            width: 3,
+                          ),
+                        boxShadow:[
+                          BoxShadow(
+
+                            offset: Offset(0,10),
+                            blurRadius: 50,
+                            color: Colors.white.withOpacity(0.23),
+                          ),
+                        ]
+                      ),
+                      child: Container(
+
+                        // margin: const EdgeInsets.only(top:20,left: 20),
+                        child: DatePicker(
+                          DateTime.now(),
+                          height: 95,
+                          width: 80,
+                          initialSelectedDate: DateTime.now(),
+                          selectionColor: Color(0xFF7A9BEE),
+                          selectedTextColor: Colors.white,
+                          dateTextStyle: GoogleFonts.lato(
+                            textStyle: TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.w600,
+                              color: Colors.grey,
+                            ),
+                          ),
+                          dayTextStyle: GoogleFonts.lato(
+                            textStyle: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.w600,
+                              color: Colors.grey,
+                            ),
+                          ),
+                          monthTextStyle: GoogleFonts.lato(
+                            textStyle: TextStyle(
+                              fontSize: 14,
+                              fontWeight: FontWeight.w600,
+                              color: Colors.grey,
+                            ),
+                          ),
+                          onDateChange: (date){
+                            _selectedDate = date;
+                          },
+                        ),
+                      ),
+
+                    ),
+                  ),
+                ],
+
+              ),
 
             ),
+            SizedBox(
+              height: 10,
+            ),
+            Container(
+              margin: EdgeInsets.only(top: 8),
+              height: MediaQuery.of(context).size.height*0.6,
+              child: AnimatedList(
+                  key: listKey,
+                  initialItemCount: items.length,
+                  itemBuilder: (context, index, animation) => ListItemWidget(
+                    item : items[index],
+                    animation: animation,
+                    onClicked: ()=>removeItem(index),
 
-          ),
-          SizedBox(
-            height: 20,
-          ),
-          Container(
-
-            height: 490,
-            child: AnimatedList(
-                key: listKey,
-                initialItemCount: items.length,
-                itemBuilder: (context, index, animation) => ListItemWidget(
-                  item : items[index],
-                  animation: animation,
-                  onClicked: ()=>removeItem(index),
-
-            ),),
+              ),),
 
 
-          ),
-        ],
+            ),
+          ],
 
+        ),
       ),
-          floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+          floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
     floatingActionButton: FloatingActionButton(
     // isExtended: true,
     child: Icon(Icons.add),
-    backgroundColor: Colors.green,
+    backgroundColor: Color(0xFF21BFBD),
     onPressed: ()=>insertItem()
     ));
   }

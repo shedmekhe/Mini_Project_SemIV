@@ -22,11 +22,12 @@ class ListItemWidget extends StatelessWidget{
     margin: EdgeInsets.all(8),
     decoration: BoxDecoration(
       borderRadius: BorderRadius.circular(12),
-      color: Colors.grey,
+      color: Colors.white,
     ),
     child: ListTile(
       contentPadding: EdgeInsets.all(16),
       leading: CircleAvatar(
+        backgroundColor: Color(0xFF7A9BEE),
         radius: 32,
         backgroundImage: NetworkImage(item.urlImage),
       ),
@@ -38,7 +39,7 @@ class ListItemWidget extends StatelessWidget{
         ),
       ),
       trailing: IconButton(
-        icon: Icon(Icons.delete,color: Colors.red,size: 32,),
+        icon: Icon(Icons.delete,color: Color(0xFF7A9BEE),size: 32,),
         onPressed: onClicked,
       ),
     ),

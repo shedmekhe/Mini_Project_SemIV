@@ -8,7 +8,8 @@ import 'package:intl/intl.dart';
 import 'package:mini_project_ui/Screens/button.dart';
 import 'package:mini_project_ui/Screens/input_field.dart';
 import 'package:mini_project_ui/Screens/routine.dart';
-
+//0xFF21BFBD
+//0xFF7A9BEE
 class AddTaskPage extends StatefulWidget {
   const AddTaskPage({Key? key}) : super(key: key);
 
@@ -32,23 +33,28 @@ class _AddTaskPageState extends State<AddTaskPage> {
   int _selectedColor = 0;
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
+    // Size size = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: Color(0xFFfbfcff),
+      backgroundColor: Color(0xFF7A9BEE),
       appBar: AppBar(
+          elevation: 0,
+        backgroundColor: Color(0xFF7A9BEE),
           actions: [
             Icon(
-              Icons.person,
+              Icons.menu,
               size : 40,
             )
           ],
 
-          title: Center(child: Text("Add Tasks",))
+          title: Center(child: Text("Add Tasks",
+          style: TextStyle(
+                fontSize: 30
+          ),))
       ),
       body: SingleChildScrollView(
         child: Container(
           decoration: BoxDecoration(
-              color: Colors.blue
+              color: Color(0xFF7A9BEE)
             // gradient: LinearGradient(
             //   colors: [
             //     Colors.white,
@@ -60,52 +66,34 @@ class _AddTaskPageState extends State<AddTaskPage> {
           child: Column(
             children: [
               SizedBox(
-                height: size.height,
+                // height: size.height,
                 child: Stack(
                   children: <Widget>[
                     Container(
-                      margin: EdgeInsets.only(top: size.height*0.3-170),
-                      height: 650,
+
+                      margin: EdgeInsets.only(top: 30),
+                      height:702,
                       decoration: BoxDecoration(
 
-                        gradient: LinearGradient(
-                          colors: [
-                            Colors.white,
-                            Colors.lightBlueAccent,
-
-                          ]
-                        ),
-                        border: Border.all(
-                          color: Colors.red,
-                          width: 2,
-                        ),
+                        color: Colors.white,
                         borderRadius: BorderRadius.only(
-                          bottomLeft: Radius.circular(24),
-                          bottomRight: Radius.circular(24),
-                          topLeft: Radius.circular(24),
-                          topRight: Radius.circular(24),
+                          // bottomLeft: Radius.circular(24),
+                          // bottomRight: Radius.circular(24),
+                          topLeft: Radius.circular(60),
+                          topRight: Radius.circular(60),
+                          // topRight: Radius.circular(24),
                         )
                       ),
                     ),
                     Column(
                       children: [
                         Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
-                            Text(
-                              "Add Task",
-                              style: TextStyle(
-                                color: Colors.blueGrey[900],
-                                fontWeight: FontWeight.bold,
-                                  fontSize: 40.0
-                              )
-                            ),
                             SizedBox(
                               width: 100
                             ),
-                            Icon(Icons.article,
-                            size: 60,
-                            color: Colors.blueGrey[900],),
                           ],
                         ),
 
@@ -114,9 +102,13 @@ class _AddTaskPageState extends State<AddTaskPage> {
                           child: Column(
                             children: <Widget>[
                           MyInputField(title: "Title", hint: "Enter your title",controller: _titleController),
-
-
+                            SizedBox(
+                              height: 8,
+                            ),
                             MyInputField(title: "Note", hint: "Enter your note",controller: _noteController,),
+                              SizedBox(
+                                height: 8,
+                              ),
                             MyInputField(title: "Date", hint: DateFormat.yMd().format(_selectedDate),
                               widget: IconButton(
                                 icon: Icon(Icons.calendar_today_outlined,
@@ -126,6 +118,9 @@ class _AddTaskPageState extends State<AddTaskPage> {
                                   _getDateFromUser();
                                 },
                               ),),
+                              SizedBox(
+                                height: 8,
+                              ),
                             Row(
                               children: [
                                 Expanded(child: MyInputField(
@@ -158,6 +153,9 @@ class _AddTaskPageState extends State<AddTaskPage> {
                                 )),
                               ],
                             ),
+                              SizedBox(
+                                height: 8,
+                              ),
                             MyInputField(title: "Repeat", hint: "$_selectedRepeat",
                               widget: DropdownButton(
                                 icon: Icon(Icons.keyboard_arrow_down,
@@ -195,13 +193,15 @@ class _AddTaskPageState extends State<AddTaskPage> {
                                   width: 150,
                                   child: ElevatedButton(
 
-                                    child: const Text('Save Task',),
+                                    child: const Text('Save Task',
+                                    style: TextStyle(color: Colors.white,
+                                    fontSize: 18),),
                                     style: ButtonStyle(
-                                        backgroundColor: MaterialStateProperty.all(Colors.indigo),
+                                        backgroundColor: MaterialStateProperty.all(Color(0xFF21BFBD)),
                                         shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                                             RoundedRectangleBorder(
                                                 borderRadius: BorderRadius.circular(15.0),
-                                                side: BorderSide(color: Colors.red)
+
                                             )
                                         )
                                     ),
