@@ -18,33 +18,216 @@ class _FitnessPageState extends State<FitnessPage> {
   int navigationIndex=0;
   @override
   Widget build(BuildContext context) {
+
     return SafeArea(
+
         child: Scaffold(
-          backgroundColor: Colors.blue,
-          appBar: AppBar(
-            title: Center(
-              child: Text('Fitness'),
-            ),
-        ),
-          body: Container(
-            decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  begin: Alignment.topRight,
-                  end: Alignment.bottomLeft,
-                  colors: [
-                    Colors.greenAccent,
-                    Colors.indigo,
-                  ],
-                )),
-            child: Center(
-              child: Text(
-                'Hello this is fitness Page',
-                style: TextStyle(
-                  fontSize: 22,
-                  fontStyle: FontStyle.italic,
-                ),
-              ),
-            ),
+
+          backgroundColor: Colors.greenAccent,
+
+          body: Stack(
+            children: <Widget>[
+              Column(
+                children: <Widget> [
+                  Container(
+                    height: MediaQuery.of(context).size.height*0.40,
+                    width: MediaQuery.of(context).size.width,
+                    color: Colors.indigo,
+                  ),
+                  Expanded(
+                      child: GridView.count(crossAxisCount: 2,
+                      childAspectRatio: 0.85,
+                      children: <Widget>[
+
+                       // Yoga
+
+                        Container(
+                          margin: EdgeInsets.only(left:10, right: 10, bottom: 20),
+                          width: MediaQuery.of(context).size.width*0.3,
+                          decoration: BoxDecoration(
+                            color:Colors.white,
+                            borderRadius: BorderRadius.all(Radius.circular(30)),
+                            boxShadow: [BoxShadow(
+                              color: Colors.black.withOpacity(0.2),
+                            )]
+                          ),
+                          child: InkWell(
+                            onTap: (){},
+                            child: Column(
+                              children: <Widget>[
+                                SizedBox(height: 20,),
+                                Expanded(child: Container(
+                                  decoration: BoxDecoration(
+                                    image: DecorationImage(
+                                      image: AssetImage('FitnessAssets/Meditate.jpg'),
+                                      fit: BoxFit.contain
+                                    ),
+                                  ),
+                                )),
+                                SizedBox(height: 20,),
+                                Container(
+                                  padding: EdgeInsets.all(20),
+                                  child: Text('Yoga',style: TextStyle(
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.w500,
+
+                                  ),textAlign: TextAlign.center ),
+                                ),
+
+                                SizedBox(height: 10,),
+                              ],
+                            ),
+                          ),
+                        ),
+
+
+                        //Cardio
+                        Container(
+                          margin: EdgeInsets.only(left:10, right: 10, bottom: 20),
+                          width: MediaQuery.of(context).size.width*0.3,
+                          decoration: BoxDecoration(
+                              color:Colors.white,
+                              borderRadius: BorderRadius.all(Radius.circular(30)),
+                              boxShadow: [BoxShadow(
+                                color: Colors.black.withOpacity(0.2),
+                              )]
+                          ),
+                          child: InkWell(
+                            onTap: (){},
+                            child: Column(
+                              children: <Widget>[
+                                SizedBox(height: 20,),
+                                Expanded(child: Container(
+                                  decoration: BoxDecoration(
+                                    image: DecorationImage(
+                                        image: AssetImage('FitnessAssets/Cardio.jpg'),
+                                        fit: BoxFit.contain
+                                    ),
+                                  ),
+                                )),
+                                SizedBox(height: 20,),
+                                Container(
+                                  padding: EdgeInsets.all(20),
+                                  child: Text('Cardio',style: TextStyle(
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.w500,
+
+                                  ),textAlign: TextAlign.center ),
+                                ),
+
+                                SizedBox(height: 10,),
+                              ],
+                            ),
+                          ),
+                        ),
+
+
+                        //Weight Training
+                        Container(
+                          margin: EdgeInsets.only(left:10, right: 10, bottom: 20),
+                          width: MediaQuery.of(context).size.width*0.3,
+                          decoration: BoxDecoration(
+                              color:Colors.white,
+                              borderRadius: BorderRadius.all(Radius.circular(30)),
+                              boxShadow: [BoxShadow(
+                                color: Colors.black.withOpacity(0.2),
+                              )]
+                          ),
+                          child: InkWell(
+                            onTap: (){},
+                            child: Column(
+                              children: <Widget>[
+                                SizedBox(height: 20,),
+                                Expanded(child: Container(
+                                  decoration: BoxDecoration(
+                                    image: DecorationImage(
+                                        image: AssetImage('FitnessAssets/Weight Training.jpg'),
+                                        fit: BoxFit.contain
+                                    ),
+                                  ),
+                                )),
+                                SizedBox(height: 20,),
+                                Container(
+                                  padding: EdgeInsets.all(20),
+                                  child: Text('Weight Training',style: TextStyle(
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.w500,
+
+                                  ),textAlign: TextAlign.center ),
+                                ),
+
+                                SizedBox(height: 10,),
+                              ],
+                            ),
+                          ),
+                        ),
+                        Container(
+                          margin: EdgeInsets.only(left:10, right: 10, bottom: 20),
+                          width: MediaQuery.of(context).size.width*0.3,
+                          decoration: BoxDecoration(
+                              color:Colors.white,
+                              borderRadius: BorderRadius.all(Radius.circular(30)),
+                              boxShadow: [BoxShadow(
+                                color: Colors.black.withOpacity(0.2),
+                              )]
+                          ),
+                          child: InkWell(
+                            onTap: (){},
+                            child: Column(
+                              children: <Widget>[
+                                SizedBox(height: 20,),
+                                Expanded(child: Container(
+                                  decoration: BoxDecoration(
+                                    image: DecorationImage(
+                                        image: AssetImage('FitnessAssets/Sports.jpg'),
+                                        fit: BoxFit.contain
+                                    ),
+                                  ),
+                                )),
+                                SizedBox(height: 20,),
+                                Container(
+                                  padding: EdgeInsets.all(20),
+                                  child: Text('Sports',style: TextStyle(
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.w500,
+
+                                  ),textAlign: TextAlign.center ),
+                                ),
+
+                                SizedBox(height: 10,),
+                              ],
+                            ),
+                          ),
+                        ),
+                        // categoryWidget("img1","Yoga"),
+                        // categoryWidget("img2","Weight Training"),
+                        // categoryWidget("img3","Sports"),
+                        // categoryWidget("img4","Cardio"),
+                      ],)
+                  ),
+                ],
+              )
+            ],
+
+
+            // decoration: BoxDecoration(
+            //     gradient: LinearGradient(
+            //       begin: Alignment.topRight,
+            //       end: Alignment.bottomLeft,
+            //       colors: [
+            //         Colors.greenAccent,
+            //         Colors.indigo,
+            //       ],
+            //     )),
+            // child: Center(
+            //   child: Text(
+            //     'Hello ',
+            //     style: TextStyle(
+            //       fontSize: 22,
+            //       fontStyle: FontStyle.italic,
+            //     ),
+            //   ),
+            // ),
           ),
           bottomNavigationBar: BottomNavigationBar(
               type: BottomNavigationBarType.fixed,
@@ -120,4 +303,8 @@ class _FitnessPageState extends State<FitnessPage> {
         ),
     );
   }
+
+
 }
+
+
